@@ -11,7 +11,7 @@ typedef void(^SGCatImageEnumerationBlock)(UIImage * _Nonnull catImage, CGFloat s
 
 @interface UIImage (SGUtils)
 
-+ (void)sg_enumerateCatsAndScaleFactors:(SGCatImageEnumerationBlock)block;
++ (void)sg_enumerateCatsAndScaleFactors:(nonnull SGCatImageEnumerationBlock)block;
 
 - (nonnull UIImage *)sg_imageResizedByScaleFactor:(CGFloat)scaleFactor;
 
