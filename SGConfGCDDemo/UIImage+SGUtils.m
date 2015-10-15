@@ -7,7 +7,20 @@
 
 #import "UIImage+SGUtils.h"
 
+const NSUInteger kNumCatImages = 5;
+
 @implementation UIImage (SGUtils)
+
++ (void)sg_enumerateCatsAndScaleFactors:(SGCatImageEnumerationBlock)block {
+  for (NSUInteger i = 1; i <= kNumCatImages; i++) {
+    // Get the scale factor
+    CGFloat scale = (CGFloat)i / (CGFloat)kNumCatImages;
+    
+    // Get the base image
+    UIImage *image = [UIImage imageNamed:@"cat.jpg"];
+    block(image, scale);
+  }
+}
 
 - (UIImage *)sg_imageResizedByScaleFactor:(CGFloat)scaleFactor {
   

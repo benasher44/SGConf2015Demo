@@ -7,7 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SGCatImageEnumerationBlock)(UIImage * _Nonnull catImage, CGFloat scaleFactor);
+
 @interface UIImage (SGUtils)
+
++ (void)sg_enumerateCatsAndScaleFactors:(SGCatImageEnumerationBlock)block;
 
 - (nonnull UIImage *)sg_imageResizedByScaleFactor:(CGFloat)scaleFactor;
 

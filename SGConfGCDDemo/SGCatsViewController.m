@@ -9,8 +9,6 @@
 
 #import "UIImage+SGUtils.h"
 
-const NSUInteger kNumCatImages = 5;
-
 @interface SGCatsViewController ()
 
 @property (strong, nonatomic) dispatch_queue_t imageProcessingQueue;
@@ -38,24 +36,23 @@ const NSUInteger kNumCatImages = 5;
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   
+  // Start timer
   CFTimeInterval start = CACurrentMediaTime();
-  CGFloat scaleDemoninator = kNumCatImages;
-  for (NSUInteger i = 1; i <= kNumCatImages; i++) {
-    // Get the scale factor
-    CGFloat scale = (CGFloat)i / scaleDemoninator;
-    
-    // Get the base image
-    UIImage *image = [UIImage imageNamed:@"cat.jpg"];
+  
+  // Render the cats
+  [UIImage sg_enumerateCatsAndScaleFactors:^(UIImage * _Nonnull catImage, CGFloat scaleFactor) {
     
     // Scale the image
     dispatch_async(self.imageProcessingQueue, ^{
-      UIImage *scaledImage = [image sg_imageResizedByScaleFactor:scale];
+      
+      UIImage *scaledImage = [catImage sg_imageResizedByScaleFactor:scaleFactor];
       dispatch_async(dispatch_get_main_queue(), ^{
         // Add the image on the main queu
         [self.processedCatImages addObject:scaledImage];
       });
     });
-  }
+  }];
+  
   dispatch_async(self.imageProcessingQueue, ^{
     dispatch_async(dispatch_get_main_queue(), ^{
       [self displayProcessedCatImages];
