@@ -17,6 +17,12 @@
 
 @implementation SGSimpleMemoryCache
 
+/*
+ Requirements for cache:
+ - Access to self.cache should be thread-safe
+ - Should minimize blocking the main thread
+ */
+
 - (instancetype)init {
   if (self = [super init]) {
     _cache = [NSMutableDictionary dictionary];
@@ -30,16 +36,16 @@
   return self;
 }
 
-- (void)didReceiveMemoryWarning {
-  [self.cache removeAllObjects];
-}
-
 - (void)setObject:(id)object forKey:(nonnull NSString *)key {
   [self.cache setObject:object forKey:key];
 }
 
 - (id)objectForKey:(nonnull NSString *)key {
   return [self.cache objectForKey:key];
+}
+
+- (void)didReceiveMemoryWarning {
+  [self.cache removeAllObjects];
 }
 
 
