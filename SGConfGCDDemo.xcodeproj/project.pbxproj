@@ -49,6 +49,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131CE0D71BD0069B00EA8D9E /* Demo 1 */ = {
+			isa = PBXGroup;
+			children = (
+				A83DF8C81BCDEB0000C340F4 /* SGSimpleMemoryCache.h */,
+				A83DF8C91BCDEB0000C340F4 /* SGSimpleMemoryCache.m */,
+			);
+			name = "Demo 1";
+			sourceTree = "<group>";
+		};
+		131CE0D81BD006A000EA8D9E /* Demo 2 */ = {
+			isa = PBXGroup;
+			children = (
+				A83DF8CB1BCDF16800C340F4 /* UIImage+SGUtils.h */,
+				A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */,
+				A83DF8981BCDE99600C340F4 /* SGCatsViewController.h */,
+				A83DF8991BCDE99600C340F4 /* SGCatsViewController.m */,
+			);
+			name = "Demo 2";
+			sourceTree = "<group>";
+		};
+		131CE0D91BD006AA00EA8D9E /* Demo 3 */ = {
+			isa = PBXGroup;
+			children = (
+				A83DF8D01BCE95D200C340F4 /* UIView+SGQueuedAnimationUtils.h */,
+				A83DF8D11BCE95D200C340F4 /* UIView+SGQueuedAnimationUtils.m */,
+				A83DF89B1BCDE99600C340F4 /* SGAnimationQueueViewController.h */,
+				A83DF89C1BCDE99600C340F4 /* SGAnimationQueueViewController.m */,
+			);
+			name = "Demo 3";
+			sourceTree = "<group>";
+		};
 		A83DF8861BCDE99600C340F4 = {
 			isa = PBXGroup;
 			children = (
@@ -68,18 +99,11 @@
 		A83DF8911BCDE99600C340F4 /* SGConfGCDDemo */ = {
 			isa = PBXGroup;
 			children = (
+				131CE0D71BD0069B00EA8D9E /* Demo 1 */,
+				131CE0D81BD006A000EA8D9E /* Demo 2 */,
+				131CE0D91BD006AA00EA8D9E /* Demo 3 */,
 				A83DF8951BCDE99600C340F4 /* SGAppDelegate.h */,
 				A83DF8961BCDE99600C340F4 /* SGAppDelegate.m */,
-				A83DF8C81BCDEB0000C340F4 /* SGSimpleMemoryCache.h */,
-				A83DF8C91BCDEB0000C340F4 /* SGSimpleMemoryCache.m */,
-				A83DF8CB1BCDF16800C340F4 /* UIImage+SGUtils.h */,
-				A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */,
-				A83DF8981BCDE99600C340F4 /* SGCatsViewController.h */,
-				A83DF8991BCDE99600C340F4 /* SGCatsViewController.m */,
-				A83DF8D01BCE95D200C340F4 /* UIView+SGQueuedAnimationUtils.h */,
-				A83DF8D11BCE95D200C340F4 /* UIView+SGQueuedAnimationUtils.m */,
-				A83DF89B1BCDE99600C340F4 /* SGAnimationQueueViewController.h */,
-				A83DF89C1BCDE99600C340F4 /* SGAnimationQueueViewController.m */,
 				A83DF8A31BCDE99600C340F4 /* LaunchScreen.storyboard */,
 				A83DF8A61BCDE99600C340F4 /* Info.plist */,
 				A83DF8CE1BCDF1FA00C340F4 /* cat.jpg */,
@@ -315,6 +339,7 @@
 				A83DF8C11BCDE99600C340F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
