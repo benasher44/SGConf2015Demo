@@ -6,13 +6,21 @@
 //
 
 #import "SGAnimationQueueViewController.h"
-#import "UIView+SGQueuedAnimationUtils.h"
 
 @interface SGAnimationQueueViewController ()
+
+@property (strong, nonatomic) dispatch_queue_t animationQueue;
 
 @end
 
 @implementation SGAnimationQueueViewController
+
+- (instancetype)init {
+  if (self = [super init]) {
+    _animationQueue = dispatch_queue_create("com.example.animationQueue", DISPATCH_QUEUE_SERIAL);
+  }
+  return self;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
