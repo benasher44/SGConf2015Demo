@@ -11,7 +11,6 @@
 
 @interface SGCatsViewController ()
 
-@property (strong, nonatomic) dispatch_queue_t imageProcessingQueue;
 @property (strong, nonatomic) NSMutableArray<UIImage *> *processedCatImages;
 @property (strong, nonatomic) UIScrollView *scrollView;
 
@@ -21,7 +20,6 @@
 
 - (instancetype)init {
   if (self = [super init]) {
-    _imageProcessingQueue = dispatch_queue_create("com.example.imageProcessingQueue", DISPATCH_QUEUE_SERIAL);
     _processedCatImages = [[NSMutableArray alloc] init];
   }
   return self;
@@ -41,24 +39,13 @@
   
   // Render the cats
   [UIImage sg_enumerateCatsAndScaleFactors:^(UIImage * _Nonnull catImage, CGFloat scaleFactor) {
-    
-    // Scale the image
-    dispatch_async(self.imageProcessingQueue, ^{
-      
-      UIImage *scaledImage = [catImage sg_imageResizedByScaleFactor:scaleFactor];
-      dispatch_async(dispatch_get_main_queue(), ^{
-        // Add the image on the main queu
-        [self.processedCatImages addObject:scaledImage];
-      });
-    });
+
+    UIImage *scaledImage = [catImage sg_imageResizedByScaleFactor:scaleFactor];
+    [self.processedCatImages addObject:scaledImage];
   }];
   
-  dispatch_async(self.imageProcessingQueue, ^{
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [self displayProcessedCatImages];
-      NSLog(@"cats - %lf", CACurrentMediaTime() - start);
-    });
-  });
+  [self displayProcessedCatImages];
+  NSLog(@"cats - %lf", CACurrentMediaTime() - start);
 }
 
 - (void)displayProcessedCatImages {
