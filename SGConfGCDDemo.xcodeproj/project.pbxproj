@@ -15,6 +15,7 @@
 		A83DF8CD1BCDF16800C340F4 /* UIImage+SGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */; settings = {ASSET_TAGS = (); }; };
 		A83DF8CF1BCDF1FA00C340F4 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A83DF8CE1BCDF1FA00C340F4 /* cat.jpg */; settings = {ASSET_TAGS = (); }; };
 		A83DF8D51BD0B22E00C340F4 /* UIView+SGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF8D41BD0B22E00C340F4 /* UIView+SGUtils.m */; settings = {ASSET_TAGS = (); }; };
+		A83DF8DB1BD0B49600C340F4 /* UIScrollView+SGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF8DA1BD0B49600C340F4 /* UIScrollView+SGUtils.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		A83DF8CE1BCDF1FA00C340F4 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
 		A83DF8D31BD0B22E00C340F4 /* UIView+SGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGUtils.h"; sourceTree = "<group>"; };
 		A83DF8D41BD0B22E00C340F4 /* UIView+SGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGUtils.m"; sourceTree = "<group>"; };
+		A83DF8D91BD0B49600C340F4 /* UIScrollView+SGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SGUtils.h"; sourceTree = "<group>"; };
+		A83DF8DA1BD0B49600C340F4 /* UIScrollView+SGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SGUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,8 @@
 			children = (
 				A83DF8CB1BCDF16800C340F4 /* UIImage+SGUtils.h */,
 				A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */,
+				A83DF8D91BD0B49600C340F4 /* UIScrollView+SGUtils.h */,
+				A83DF8DA1BD0B49600C340F4 /* UIScrollView+SGUtils.m */,
 				A83DF8981BCDE99600C340F4 /* SGCatsViewController.h */,
 				A83DF8991BCDE99600C340F4 /* SGCatsViewController.m */,
 			);
@@ -181,6 +186,7 @@
 				A83DF8971BCDE99600C340F4 /* SGAppDelegate.m in Sources */,
 				A83DF8D51BD0B22E00C340F4 /* UIView+SGUtils.m in Sources */,
 				A83DF89A1BCDE99600C340F4 /* SGCatsViewController.m in Sources */,
+				A83DF8DB1BD0B49600C340F4 /* UIScrollView+SGUtils.m in Sources */,
 				A83DF8941BCDE99600C340F4 /* main.m in Sources */,
 				A83DF8CD1BCDF16800C340F4 /* UIImage+SGUtils.m in Sources */,
 			);

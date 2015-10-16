@@ -8,6 +8,7 @@
 #import "SGCatsViewController.h"
 
 #import "UIImage+SGUtils.h"
+#import "UIScrollView+SGUtils.h"
 
 @interface SGCatsViewController ()
 
@@ -44,30 +45,9 @@
     [self.processedCatImages addObject:scaledImage];
   }];
   
-  [self displayProcessedCatImages];
+  // Add images to the scroll view sorted in size order
+  [self.scrollView sg_addImageViewsInSizeOrderForImages:self.processedCatImages];
   NSLog(@"cats - %lf", CACurrentMediaTime() - start);
-}
-
-- (void)displayProcessedCatImages {
-  NSArray *catImagesByWidth = [self.processedCatImages sortedArrayUsingComparator:^NSComparisonResult(UIImage *image1, UIImage *image2) {
-    return [@(image1.size.width) compare:@(image2.size.width)];
-  }];
-  CGFloat y = 0;
-  for (UIImage *catImage in catImagesByWidth) {
-    UIImageView *catImageView = [[UIImageView alloc] initWithImage:catImage];
-    // Center the image horizontally
-    CGRect catImageFrame = CGRectMake(CGRectGetMidX(self.view.bounds) - floorf(catImage.size.width / 2.0), y,
-                                      catImage.size.width, catImage.size.height);
-    catImageView.frame = catImageFrame;
-    
-    [self.scrollView addSubview:catImageView];
-    
-    // Keep track of where the next cat should go
-    y += catImage.size.height;
-  }
-  
-  // Set the contentSize, so we can see all of the cats
-  self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), y);
 }
 
 @end
