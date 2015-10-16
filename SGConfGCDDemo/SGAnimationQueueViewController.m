@@ -7,6 +7,8 @@
 
 #import "SGAnimationQueueViewController.h"
 
+#import "UIView+SGUtils.h"
+
 @interface SGAnimationQueueViewController ()
 
 @property (strong, nonatomic) dispatch_queue_t animationQueue;
@@ -34,15 +36,7 @@
   greenSquareView.backgroundColor = [UIColor greenColor];
   [self.view addSubview:greenSquareView];
   
-  [UIView animateWithDuration:0.5 animations:^{
-    greenSquareView.transform = CGAffineTransformRotate(greenSquareView.transform, M_PI_2);
-  } completion:^(BOOL finished) {
-    [UIView animateWithDuration:0.5 animations:^{
-      CGPoint center = greenSquareView.center;
-      center.y += 100.0;
-      greenSquareView.center = center;
-    } completion:NULL];
-  }];
+  [greenSquareView sg_animateRotateAndMoveDown:NULL];
 }
 
 @end

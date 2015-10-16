@@ -14,6 +14,7 @@
 		A83DF8A51BCDE99600C340F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83DF8A31BCDE99600C340F4 /* LaunchScreen.storyboard */; };
 		A83DF8CD1BCDF16800C340F4 /* UIImage+SGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */; settings = {ASSET_TAGS = (); }; };
 		A83DF8CF1BCDF1FA00C340F4 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A83DF8CE1BCDF1FA00C340F4 /* cat.jpg */; settings = {ASSET_TAGS = (); }; };
+		A83DF8D51BD0B22E00C340F4 /* UIView+SGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF8D41BD0B22E00C340F4 /* UIView+SGUtils.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		A83DF8CB1BCDF16800C340F4 /* UIImage+SGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGUtils.h"; sourceTree = "<group>"; };
 		A83DF8CC1BCDF16800C340F4 /* UIImage+SGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGUtils.m"; sourceTree = "<group>"; };
 		A83DF8CE1BCDF1FA00C340F4 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		A83DF8D31BD0B22E00C340F4 /* UIView+SGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGUtils.h"; sourceTree = "<group>"; };
+		A83DF8D41BD0B22E00C340F4 /* UIView+SGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		131CE0D91BD006AA00EA8D9E /* Demo 3 */ = {
 			isa = PBXGroup;
 			children = (
+				A83DF8D31BD0B22E00C340F4 /* UIView+SGUtils.h */,
+				A83DF8D41BD0B22E00C340F4 /* UIView+SGUtils.m */,
 				A83DF89B1BCDE99600C340F4 /* SGAnimationQueueViewController.h */,
 				A83DF89C1BCDE99600C340F4 /* SGAnimationQueueViewController.m */,
 			);
@@ -174,6 +179,7 @@
 			files = (
 				A83DF89D1BCDE99600C340F4 /* SGAnimationQueueViewController.m in Sources */,
 				A83DF8971BCDE99600C340F4 /* SGAppDelegate.m in Sources */,
+				A83DF8D51BD0B22E00C340F4 /* UIView+SGUtils.m in Sources */,
 				A83DF89A1BCDE99600C340F4 /* SGCatsViewController.m in Sources */,
 				A83DF8941BCDE99600C340F4 /* main.m in Sources */,
 				A83DF8CD1BCDF16800C340F4 /* UIImage+SGUtils.m in Sources */,
