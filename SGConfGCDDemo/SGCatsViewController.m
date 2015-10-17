@@ -24,8 +24,8 @@
   [self.view addSubview:self.scrollView];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   
   // Start timer
   CFTimeInterval start = CACurrentMediaTime();
