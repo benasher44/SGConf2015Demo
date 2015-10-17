@@ -18,6 +18,13 @@
 
 @implementation SGCatsViewController
 
+- (instancetype)init {
+  if (self = [super init]) {
+    
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
