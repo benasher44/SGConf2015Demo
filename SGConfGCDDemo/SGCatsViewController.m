@@ -12,19 +12,11 @@
 
 @interface SGCatsViewController ()
 
-@property (strong, nonatomic) NSMutableArray<UIImage *> *processedCatImages;
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 @end
 
 @implementation SGCatsViewController
-
-- (instancetype)init {
-  if (self = [super init]) {
-    _processedCatImages = [[NSMutableArray alloc] init];
-  }
-  return self;
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -38,15 +30,17 @@
   // Start timer
   CFTimeInterval start = CACurrentMediaTime();
   
+  NSMutableArray<UIImage *> *processedCatImages = [NSMutableArray array];
+  
   // Render the cats
   [UIImage sg_enumerateCatsAndScaleFactors:^(UIImage * _Nonnull catImage, CGFloat scaleFactor) {
 
     UIImage *scaledImage = [catImage sg_imageResizedByScaleFactor:scaleFactor];
-    [self.processedCatImages addObject:scaledImage];
+    [processedCatImages addObject:scaledImage];
   }];
   
   // Add images to the scroll view sorted in size order
-  [self.scrollView sg_addImageViewsInSizeOrderForImages:self.processedCatImages];
+  [self.scrollView sg_addImageViewsInSizeOrderForImages:processedCatImages];
   NSLog(@"cats - %lf", CACurrentMediaTime() - start);
 }
 
