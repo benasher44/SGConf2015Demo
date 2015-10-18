@@ -36,7 +36,7 @@
   greenSquareView.backgroundColor = [UIColor greenColor];
   [self.view addSubview:greenSquareView];
   
-  [greenSquareView sg_animateRotateAndMoveDown:NULL];
+  [greenSquareView sg_animateWithCompletion:NULL];
 }
 
 @end

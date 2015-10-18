@@ -10,6 +10,6 @@
 
 @interface UIView (SGUtils)
 
-- (void)sg_animateRotateAndMoveDown:(dispatch_block_t)completion;
+- (void)sg_animateWithCompletion:(dispatch_block_t)completion;
 
 @end
