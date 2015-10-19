@@ -30,7 +30,7 @@ const NSUInteger kNumCatImages = 5;
   size.height *= scaleFactor;
   
   // Start a new image context
-  UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+  UIGraphicsBeginImageContextWithOptions(size, YES, 0.0);
   
   // Draw the image at the new size we want
   [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
