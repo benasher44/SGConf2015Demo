@@ -20,6 +20,7 @@
 - (instancetype)init {
   if (self = [super init]) {
     _animationQueue = dispatch_queue_create("com.example.animationQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_set_target_queue(_animationQueue, dispatch_get_main_queue());
   }
   return self;
 }
@@ -36,7 +37,14 @@
   greenSquareView.backgroundColor = [UIColor greenColor];
   [self.view addSubview:greenSquareView];
   
-  [greenSquareView sg_animateWithCompletion:NULL];
+  for (NSUInteger i = 0; i < 6; i++) {
+    dispatch_async(_animationQueue, ^{
+      dispatch_suspend(_animationQueue);
+      [greenSquareView sg_animateWithCompletion:^{
+        dispatch_resume(_animationQueue);
+      }];
+    });
+  }
 }
 
 @end
